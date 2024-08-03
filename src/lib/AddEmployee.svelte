@@ -13,8 +13,11 @@
 			const nextId = Math.max(...ids) + 1;
 			e.push({id: nextId, ...employee})
 			return e;
-		})
+		});
+		employee = {name: '', position: '', salary: 0};
 	}
+
+	$: addDisabled = employee.name === '' || employee.position === '' || employee.salary <= 0;
 </script>
 
 <td class='pl-30'>
@@ -40,6 +43,7 @@
 	<button
 		class='x-small w-75 ma-0 px-25'
 		on:click={addEmployee}
+		disabled={addDisabled}
 	>
 		Add
 	</button>
