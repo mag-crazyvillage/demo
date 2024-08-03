@@ -1,7 +1,7 @@
-<script>
-	export let name;
-	export let position;
-	export let salary;
+<script lang="ts">
+	export let name: string;
+	export let position: string;
+	export let salary: number;
 </script>
 
 <td>{name}</td>
