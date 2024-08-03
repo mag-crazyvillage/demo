@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Employee from '$lib/Employee.svelte';
 	import AddEmployee from '$lib/AddEmployee.svelte';
-	import { employeesList } from '$lib/stores';
+	import { employees } from '$lib/stores';
 </script>
 
 <div class="card w-45 mx-auto mt-75 pb-5">
@@ -15,7 +15,7 @@
 		</tr>
 		</thead>
 		<tbody>
-		{#each $employeesList as employee}
+		{#each $employees as employee}
 			<tr>
 				<Employee
 					{...employee}

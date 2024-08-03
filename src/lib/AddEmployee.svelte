@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {employeesList} from '$lib/stores';
+	import {employees} from '$lib/stores';
 
 	let employee: {name: string, position: string, salary: number} = {
 		name: '',
@@ -8,7 +8,7 @@
 	};
 
 	function addEmployee(){
-		employeesList.update((e) => {
+		employees.update((e) => {
 			const ids = e.map(e => e.id);
 			const nextId = Math.max(...ids) + 1;
 			e.push({id: nextId, ...employee})
