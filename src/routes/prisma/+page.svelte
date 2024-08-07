@@ -9,6 +9,7 @@
 		TableHead,
 		TableHeadCell
 	} from 'flowbite-svelte';
+	import { enhance } from '$app/forms';
 
 	export let data;
 </script>
@@ -35,7 +36,7 @@
 		{/each}
 	</TableBody>
 </Table>
-<form method="POST" action="/prisma?/create">
+<form method="POST" action="/prisma?/create" use:enhance>
 	<div class="grid gap-6 mb-6 md:grid-cols-4">
 		<div>
 			<Label for="name" class="mb-2">Name</Label>
